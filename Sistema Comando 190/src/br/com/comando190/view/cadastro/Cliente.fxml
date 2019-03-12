@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.comando190.control.cadastro.ClienteController">
+   <children>
+      <Pane maxHeight="85.0" maxWidth="1.7976931348623157E308" prefHeight="82.0" prefWidth="600.0" style="-fx-background-color: red;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <InnerShadow blurType="GAUSSIAN" color="FIREBRICK" height="132.27" offsetY="10.0" radius="32.5675" width="0.0" />
+         </effect>
+         <children>
+            <Label layoutX="14.0" layoutY="23.0" text="Cadastro de Cliente" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" spacing="25.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <JFXTextField fx:id="txtRazao" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Razão Social" unFocusColor="BLACK">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtFantasia" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Nome Fantasia" unFocusColor="BLACK">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtInscEstadual" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Inscrição Estadual" unFocusColor="BLACK">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCnpj" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="CNPJ" unFocusColor="BLACK">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <Separator prefWidth="200.0" />
+            <HBox maxWidth="1.7976931348623157E308" spacing="15.0">
+               <children>
+                  <JFXTextField fx:id="txtRua" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Rua" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtBairro" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Bairro" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox maxWidth="1.7976931348623157E308" spacing="15.0">
+               <children>
+                  <JFXTextField fx:id="txtNumero" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Número" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtComplemento" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Complemento" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtCep" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="CEP" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox maxWidth="1.7976931348623157E308" spacing="15.0">
+               <children>
+                  <JFXTextField fx:id="txtContato" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Nome do Contato" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtTelefone" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="Telefone" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtEmail" focusColor="FIREBRICK" labelFloat="true" prefHeight="30.0" prefWidth="406.0" promptText="E-Mail" unFocusColor="BLACK">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <JFXTextArea fx:id="txtObs" focusColor="FIREBRICK" labelFloat="true" promptText="Observações" unFocusColor="BLACK">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextArea>
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" layoutY="500.0" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: whitesmoke;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btnCancelar" cancelButton="true" onAction="#cancelar" prefHeight="30.0" prefWidth="80.0" ripplerFill="#f01919" style="-fx-background-color: firebrick;" text="Cancelar" textFill="WHITE" />
+            <JFXButton defaultButton="true" onAction="#salvar" prefHeight="30.0" prefWidth="79.0" ripplerFill="#02aa29" style="-fx-background-color: forestgreen;" text="Salvar" textFill="WHITE" />
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </HBox>
+      <VBox fx:id="paneSalvando" alignment="CENTER" opacity="0.45" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+         <children>
+            <Label text="Salvando..." textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+            <ProgressIndicator />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
