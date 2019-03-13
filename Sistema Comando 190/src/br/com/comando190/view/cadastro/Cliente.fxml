@@ -127,7 +127,7 @@
             <Insets right="15.0" />
          </padding>
       </HBox>
-      <VBox fx:id="paneSalvando" alignment="CENTER" opacity="0.45" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+      <VBox fx:id="paneSalvando" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0.45);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
          <children>
             <Label text="Salvando..." textFill="WHITE">
                <font>
@@ -135,6 +135,36 @@
                </font>
             </Label>
             <ProgressIndicator />
+         </children>
+      </VBox>
+      <VBox fx:id="paneErro" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0.45);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+         <children>
+            <Label text="ERRO" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTextoErro" text="texto do erro" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" onAction="#okErro" prefHeight="46.0" prefWidth="150.0" ripplerFill="WHITE" style="-fx-background-color: firebrick;" text="OK" textFill="WHITE" />
+         </children>
+      </VBox>
+      <VBox fx:id="paneSucesso" alignment="CENTER" layoutX="10.0" layoutY="92.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0.45);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <Label text="SUCESSO" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTextoErro1" text="Cliente salvo." textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" onAction="#okSucesso" prefHeight="46.0" prefWidth="150.0" ripplerFill="WHITE" style="-fx-background-color: forestgreen;" text="OK" textFill="WHITE" />
          </children>
       </VBox>
    </children>

@@ -7,7 +7,10 @@ package br.com.comando190.control;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,8 +35,7 @@ public class InicioController implements Initializable {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
         cadastrarCliente();
-        
-    }
+    } 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,7 +50,6 @@ public class InicioController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Cadastrar Cliente");
             stage.show();
-            stage.setResizable(false);
         }
         catch (IOException e) {
             e.printStackTrace();

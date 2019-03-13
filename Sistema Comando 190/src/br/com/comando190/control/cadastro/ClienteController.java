@@ -5,24 +5,26 @@
  */
 package br.com.comando190.control.cadastro;
 
-import br.com.comando190.model.Clientes;
-import br.com.comando190.util.DAO;
+import br.com.comando190.util.salvarDados;
+import br.eti.diegofonseca.MaskFieldUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
+import com.jfoenix.validation.ValidationFacade;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 /**
  * FXML Controller class
@@ -64,44 +66,66 @@ public class ClienteController implements Initializable {
     private JFXButton btnCancelar;
     @FXML
     private Pane paneSalvando;
+    @FXML
+    private Pane paneErro;
+    @FXML
+    private Pane paneSucesso;
+    @FXML
+    private Label lblTextoErro;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        mascaras();
     }    
+    @FXML
+    private void okErro(){
+        paneErro.setVisible(false);
+    }
+    @FXML
+    private void okSucesso(){
+        paneSucesso.setVisible(false);
+    }
     @FXML
     private void cancelar(){
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.close();
     }
+    private void mascaras(){
+        MaskFieldUtil.cnpjField(txtCnpj);
+        MaskFieldUtil.foneField(txtTelefone);
+        MaskFieldUtil.cepField(txtCep);
+        MaskFieldUtil.numericField(txtNumero);
+    }
+    
     @FXML
     private void salvar() {
         paneSalvando.setVisible(true);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Comando190");
-        EntityManager em = emf.createEntityManager();
+        Thread thread = new Thread(){
+            public void run(){
+                salvarDados sd = new salvarDados();
+                String resultado = sd.Cliente(txtRazao.getText(), txtFantasia.getText(), txtInscEstadual.getText(), txtCnpj.getText(), txtRua.getText(), txtBairro.getText(), txtNumero.getText(), txtComplemento.getText(), txtCep.getText(), txtContato.getText(), txtNumero.getText(), txtEmail.getText(), txtComplemento.getText());
+                System.out.print(resultado);
+                if (resultado == "true"){
+                    paneSalvando.setVisible(false);
+                    paneSucesso.setVisible(true);
+                    Thread.currentThread().stop();
+                }
+                if (resultado == "false"){
+                    paneSalvando.setVisible(false);
+                    lblTextoErro.setText("Falha na conexão com o servidor.");
+                    paneErro.setVisible(true);
+                    Thread.currentThread().stop();
+                } 
+            }
+        };
+        thread.start();
 
-        Clientes cc = new Clientes();
-        cc.setRazao(txtRazao.getText());
-        cc.setFantasia(txtFantasia.getText());
-        cc.setInscEstadual(txtInscEstadual.getText());
-        cc.setCnpj(txtCnpj.getText());
+           
+            
         
-        cc.setRua(txtRua.getText());
-        cc.setBairro(txtBairro.getText());
-        cc.setNumero(Integer.parseInt(txtNumero.getText()));
-        cc.setComplemento(txtComplemento.getText());
-        cc.setCep(txtCep.getText());
         
-        cc.setContato(txtContato.getText());
-        cc.setTelefone(txtTelefone.getText());
-        cc.setEmail(txtEmail.getText());
-        
-        cc.setObs(txtObs.getText());
-        
-        em.getTransaction().begin();
-        em.persist(cc);
-        em.getTransaction().commit();
-        paneSalvando.setVisible(false);
+
     }
     
 }
